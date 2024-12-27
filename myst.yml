@@ -1,15 +1,18 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  id: msa-em-quickstart-uv
-  title: Elemental Microscopy Quickstart
-  description: A minimal repository to be used as quickstart for the Elemental Microscopy journal
-  short_title: EM Quickstart
+  id: colab-apmc2025-4dstem-workshop
+  title: APMC2025 | 4D-STEM workshop
+  description: 4D-STEM simulation and analysis workshop, as taught by Georgios Varnavides at APMC 2025.
+  short_title: 4D-STEM Workshop
   keywords:
-    - Keyword One
-    - Keyword Two
-    - Spell Out Acronyms
-  github: https://github.com/msa-em/em-quickstart-uv
+    - Scanning Transmission Electron Microscopy
+    - Multislice Simulation
+    - Phase Retrieval Methods
+    - Phase Contrast Imaging
+    - Nanobeam Diffraction
+    - Strain and Orientation Mapping
+  github: https://github.com/gvarnavi/apmc2025-4dstem-workshop
   jupyter: true
   #  jupyter:
   #    binder:
@@ -23,12 +26,12 @@ project:
   license: CC-BY-4.0
   banner: banner.png
   thumbnail: thumbnail.webp
-  date: 2024-08-27
+  date: 2024-12-27
   history:
-    submitted: 2023-08-27
-    published: 2024-08-27
+    submitted: 2024-12-27
+    published: 2025-01-31
   requirements:
-    - 'environment.yml'
+    - 'Dockerfile'
   resources:
     - 'notebooks/**/*'
   references:
@@ -38,25 +41,7 @@ project:
   exclude:
     - README.md
   authors:
-    - id: cophus
-      name: Colin Ophus
-      corresponding: true
-      email: cophus@gmail.com
-      orcid: 0000-0003-2348-8558
-      affiliations:
-        - id: ncem
-          department: National Center for Electron Microscopy, Molecular Foundry
-          institution: Lawrence Berkeley National Laboratory
-          address: 1 Cyclotron Road, Berkeley, CA, USA, 94720
-          ror: 02jbv0t02
-      roles:
-        - Conceptualization
-        - Funding acquisition
-        - Project administration
-        - Supervision
-        - Visualization
-        - Writing - original draft
-    - id: garnavides
+    - id: gvarnavides
       name: Georgios Varnavides
       email: gvarnavides@berkeley.edu
       orcid: 0000-0001-8338-3323
@@ -68,27 +53,25 @@ project:
           ror: 01an7q238
       roles:
         - Conceptualization
+        - Funding acquisition
+        - Project administration
         - Software
         - Validation
         - Visualization
         - Writing - original draft
   funding:
-    - statement: We thank the Microscopy Society of America for sponsoring this project.
+    - statement: We thank the center for microscopy and microanalysis (CMM) of the University of Queensland, Australia for sponsoring this workshop.
       recipients:
-        - cophus
-        - garnavides
-    - statement: Work at the Molecular Foundry was supported by the Office of Science, Office of Basic Energy Sciences, of the U.S. Department of Energy under Contract No. DE-AC02-05CH11231.
-      id: DE-AC02-05CH11231
-      sources:
-        - name: Office of Science, Office of Basic Energy Sciences, of the U.S. Department of Energy
-      recipients:
-        - cophus
+        - gvarnavides
   abbreviations:
+    STEM: scanning transmission electron microscopy
     4D-STEM: four dimensional scanning transmission electron microscopy
+    4DSTEM: four dimensional scanning transmission electron microscopy
     FFT: fast Fourier transform
     HAADF: high angle annular dark field
     HRTEM: high resolution transmission electron microscopy
+    PCI: phase contrast imaging
+    SSB: single
     M&M: Microscopy and Microanalysis
-    STEM: scanning transmission electron microscopy
 site:
   template: book-theme
