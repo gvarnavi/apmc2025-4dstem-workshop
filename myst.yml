@@ -1,0 +1,94 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: msa-em-quickstart-uv
+  title: Elemental Microscopy Quickstart
+  description: A minimal repository to be used as quickstart for the Elemental Microscopy journal
+  short_title: EM Quickstart
+  keywords:
+    - Keyword One
+    - Keyword Two
+    - Spell Out Acronyms
+  github: https://github.com/msa-em/em-quickstart-uv
+  jupyter: true
+  #  jupyter:
+  #    binder:
+  #      url: https://y2j74k9mn0bz.curvenote.dev/services/binder/
+  #      repo: msa-em/em-quickstart-uv
+  #  jupyter:
+  #    server:
+  #      url: 'http://localhost:8888'
+  #      token: '512ac78f14e1141db1fac17e8b4099c1e5bc7d589518b38c'
+  open_access: true
+  license: CC-BY-4.0
+  banner: banner.png
+  thumbnail: thumbnail.webp
+  date: 2024-08-27
+  history:
+    submitted: 2023-08-27
+    published: 2024-08-27
+  requirements:
+    - 'environment.yml'
+  resources:
+    - 'notebooks/**/*'
+  references:
+    mystmd: https://mystmd.org/guide
+  exports:
+    - format: meca
+  exclude:
+    - README.md
+  authors:
+    - id: cophus
+      name: Colin Ophus
+      corresponding: true
+      email: cophus@gmail.com
+      orcid: 0000-0003-2348-8558
+      affiliations:
+        - id: ncem
+          department: National Center for Electron Microscopy, Molecular Foundry
+          institution: Lawrence Berkeley National Laboratory
+          address: 1 Cyclotron Road, Berkeley, CA, USA, 94720
+          ror: 02jbv0t02
+      roles:
+        - Conceptualization
+        - Funding acquisition
+        - Project administration
+        - Supervision
+        - Visualization
+        - Writing - original draft
+    - id: garnavides
+      name: Georgios Varnavides
+      email: gvarnavides@berkeley.edu
+      orcid: 0000-0001-8338-3323
+      affiliations:
+        - id: miller
+          department: Miller Institute for Basic Research in Science
+          institution: University of California, Berkeley
+          address: 468 Donner Lab, Berkeley, CA, USA, 94720
+          ror: 01an7q238
+      roles:
+        - Conceptualization
+        - Software
+        - Validation
+        - Visualization
+        - Writing - original draft
+  funding:
+    - statement: We thank the Microscopy Society of America for sponsoring this project.
+      recipients:
+        - cophus
+        - garnavides
+    - statement: Work at the Molecular Foundry was supported by the Office of Science, Office of Basic Energy Sciences, of the U.S. Department of Energy under Contract No. DE-AC02-05CH11231.
+      id: DE-AC02-05CH11231
+      sources:
+        - name: Office of Science, Office of Basic Energy Sciences, of the U.S. Department of Energy
+      recipients:
+        - cophus
+  abbreviations:
+    4D-STEM: four dimensional scanning transmission electron microscopy
+    FFT: fast Fourier transform
+    HAADF: high angle annular dark field
+    HRTEM: high resolution transmission electron microscopy
+    M&M: Microscopy and Microanalysis
+    STEM: scanning transmission electron microscopy
+site:
+  template: book-theme

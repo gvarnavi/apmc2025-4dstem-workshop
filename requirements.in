@@ -1,0 +1,9 @@
+numpy
+scipy
+h5py
+notebook
+jupyterlab
+jupyterlab-myst
+ipywidgets
+matplotlib
+ipympl
