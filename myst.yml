@@ -3,7 +3,7 @@ version: 1
 project:
   id: colab-apmc2025-4dstem-workshop
   title: APMC2025 | 4D-STEM workshop
-  description: 4D-STEM simulation and analysis workshop, as taught by Georgios Varnavides at APMC 2025.
+  description: 4D-STEM simulation and analysis workshop, as taught by Georgios Varnavides at the 13th Asia Pacific Microscopy Congress 2025.
   short_title: 4D-STEM Workshop
   keywords:
     - Scanning Transmission Electron Microscopy
