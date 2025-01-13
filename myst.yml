@@ -31,7 +31,8 @@ project:
     submitted: 2024-12-27
     published: 2025-01-31
   requirements:
-    - requirements.txt
+    - 'Dockerfile'
+    - requirements.in
   resources:
     - 'notebooks/**/*'
   references:
