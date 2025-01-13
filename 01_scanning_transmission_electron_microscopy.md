@@ -1,5 +1,7 @@
 ---
 title: STEM Measurements
+numbering:
+  enumerator: 1.%s
 ---
 
 When an accelerated beam of electrons passes through a thin sample, the electron wavefunction is scattered due to interactions with the sample potential. Before describing the mathematics we will use the interactive widget below to obtain an intuition for the physics.
