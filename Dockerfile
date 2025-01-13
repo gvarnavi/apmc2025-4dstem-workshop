@@ -18,5 +18,11 @@ RUN adduser --disabled-password \
 WORKDIR ${HOME}
 USER ${USER}
 
+# Make sure the contents of our repo are in ${HOME}
+COPY . ${HOME}
+USER root
+RUN chown -R ${NB_UID} ${HOME}
+USER ${NB_USER}
+
 # run jupyterlab
 CMD ["uv", "run", "jupyter", "lab"]
