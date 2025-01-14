@@ -5,7 +5,7 @@ numbering:
   enumerator: 3.%s
 ---
 
-## Independent Atom Model
+## Independent atom model
 
 We can use the collection of atoms we defined in [](#atomic_models_page) to compute the electrostatic scattering potential an incident electron wavefunction experiences as it traverses the sample.
 
@@ -56,6 +56,7 @@ where $f_x(k) = \mathcal{F}_k\left[\rho(\bm{r})\right]$ is referred to as the x-
 ### Atomic potential parametrizations
 
 While the radial dependence of the electrostatic potential (or equivalently in reciprocal space the electron scattering factor) for different elements cannot be computed analytically, we expect it to follow a similar functional form as that of the Hydrogen atom.
+
 This is indeed confirmed by computationally-expensive first-principles calculations, and thus a sensible way forward is to parametrize these scattering factors using numerical fits of first-principle calculations.
 This is shown in [](#scattering_factors) for five selected elements, in both real- and reciprocal-space using the Lobato parametrization {cite:p}`10.1107/S205327331401643X`. 
 
@@ -63,7 +64,7 @@ This is shown in [](#scattering_factors) for five selected elements, in both rea
 :name: scattering_factors
 ```
 
-Finally, the sample potential $V(r)$ can be obtained under the independent atom model (IAM) using a superposition of independent atom potentials
+Finally, the sample potential $V(r)$ can be obtained under the independent atom model (IAM) using a superposition of independent atom potentials $V_i(\bm{r})$ for atom centered at $\bm{r}_i$.
 
 ```{math}
 :label: iam

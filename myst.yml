@@ -65,14 +65,21 @@ project:
       recipients:
         - gvarnavides
   abbreviations:
+    TEM: transmission electron microscopy
+    HRTEM: high resolution transmission electron microscopy
     STEM: scanning transmission electron microscopy
     4D-STEM: four dimensional scanning transmission electron microscopy
     4DSTEM: four dimensional scanning transmission electron microscopy
-    FFT: fast Fourier transform
+    BF: bright field
+    DF: dark field
     HAADF: high angle annular dark field
-    HRTEM: high resolution transmission electron microscopy
+    FFT: fast Fourier transform
     PCI: phase contrast imaging
-    SSB: single
-    M&M: Microscopy and Microanalysis
+    DPC: differential phase contrast
+    SSB: single side-band
+    WDD: Wigner distribution deconvolution
+    tcBF: tilt corrected bright field
+    IAM: independent atom model
+    ASE: atomic simulation environment
 site:
   template: book-theme

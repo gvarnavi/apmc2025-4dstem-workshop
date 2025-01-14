@@ -19,4 +19,4 @@ Note the probe is complex-valued and here we are encoding the phase of the elect
 Finally, in the right panel of [](#fig_stem_measurements) we are plotting the diffraction-space intensity of the probe after it has interacted with the sample.
 Note that the probe wavefunction is complex-valued, but we only plot its amplitude to highlight the limitation of current detectors in collecting the phase of the electron wavefunction.
 
-The STEM techniques we will explore today such as bright-field STEM, dark-field STEM, differential phase contrast, or ptychography all share the same objective: namely to obtain robust estimates of the sample potential (left panel of [](#fig_stem_measurements)) using a set of diffraction intensities (right panel of [](#fig_stem_measurements)).
+The STEM techniques we will explore today such as bright-field (BF) STEM, dark-field (DF) STEM, differential phase contrast (DPC), or ptychography all share the same objective: namely to obtain robust estimates of the sample potential (left panel of [](#fig_stem_measurements)) using a set of diffraction intensities (right panel of [](#fig_stem_measurements)).

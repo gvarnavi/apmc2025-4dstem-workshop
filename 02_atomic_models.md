@@ -6,11 +6,11 @@ numbering:
 ---
 
 As we saw in [](#stem_measurements_page), the first step in simulating transmission electron microscopy measurements is to specify the electrostatic scattering potential of the sample.
-In the simplest case we will consider in this workshop, namely the independent atom model (IAM), this is fully specified by the coordinates and chemical symbols of the atoms in the sample.
+In the simplest case we will consider in [](#scattering_potentials_page), namely the independent atom model (IAM), this is fully specified by the coordinates and chemical symbols of the atoms in the sample.
 
 We will use the Atomic Simulation Environment (ASE) package to manipulate and visualize atomic models of the samples we will simulate.
 
-## Periodic Unit-cells
+## Periodic unit-cells
 
 The main object of interest in `ase` is the `Atoms` class, which defines a collection of atoms.
 At a minimum, this can be constructed by passing:  
@@ -62,7 +62,7 @@ We can visualize `Atoms` objects along various 2D planes using the `abTEM.show_a
 Si$_3$N$_4$ unit-cell projected along the three cartesian directions.
 :::
 
-## Orthogonal Super-cells
+## Orthorhombic super-cells
 
 We can now use our periodic unit-cell to construct larger "super-cell" structures by tiling along the unit-cell directions.
 In `ase` this is simply achieved by multiplication of the `Atoms` object.
@@ -85,6 +85,8 @@ We choose the tiling along the beam direction to be 17 unit-cells, giving a tota
 :name: super_cell_projections
 Orthorhombic Si$_3$N$_4$ super-cell tiled and projected along the three cartesian directions.
 :::
+
+### Interactive super-cell widget
 
 Finally, [](#sto_supercell) illustrates the interactive construction of a SrTiO$_3$ slab with various in-plane dimensions along different zone-axes.
 
