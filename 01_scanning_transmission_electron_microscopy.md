@@ -1,5 +1,6 @@
 ---
 title: STEM Measurements
+label: stem_measurements_page
 numbering:
   enumerator: 1.%s
 ---
