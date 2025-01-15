@@ -81,5 +81,12 @@ project:
     tcBF: tilt corrected bright field
     IAM: independent atom model
     ASE: atomic simulation environment
+  toc:
+    - file: index.md
+    - title: STEM Principles
+      children:
+        - file: 01_scanning_transmission_electron_microscopy.md
+        - file: 02_atomic_models.md
+        - file: 03_scattering_potentials.md
 site:
   template: book-theme
