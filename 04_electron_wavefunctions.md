@@ -41,4 +41,59 @@ Let's investigate how the radius of this soft aperture (specified by the converg
 
 ```{figure} #app:convergence_angle_widget
 :name: convergence_angle_widget
+Effect of the convergence semi-angle on the real-space size of a converged probe.
 ```
+
+### Aberrations Function
+
+It is evident from [](#convergence_angle_widget) that the larger the convergence angle, the smaller the real-space probe size.
+Why do we bother clipping the elecrons at higher scattering angles then, and don't always image with a large convergence angle?
+The reason is that the residual aberrations we mentioned above are more pronounced at higher scattering angles, limiting our probe size.
+
+```{figure} #app:aberrations_widget
+:name: aberrations_widget
+Effect of common aberrations on the real-space size of a converged probe.
+```
+
+[](#aberrations_widget) illustrates this effect by adding some common low-order aberrations to our probe function, namely defocus, (two-fold) astigmatism, and coma.
+Try moving the semiangle slider to notice that, in the presence of aberrations, there's an optimum convergence angle to achieve the minimal probe size.
+Using the phase scalebar, try and see if you can identify a condition for the maximum allowed "phase-tolerance" for this condition.
+
+### Polar Aberrations Expansion
+
+Notice that while defocus and astigmatism above are specified in nanometers, we specified coma in microns instead.
+This is because they scale differently with the magnitude of the spatial frequency.
+Similarly, notice that (i) we didn't need to specify an angle for the defocus, which is rotationall invariant; (ii) the astigmatism angle is modulo 180&deg;; while (iii) the coma angle is module 360&deg;.
+This is because they have different azimuthal orders.
+
+More generally, we expand the aberration function $\chi(\bm{k})$ in [](#stem_probe_eq) as a series:
+
+```{math}
+:label: chi_expansion_eq
+\chi(k,\phi) = \frac{2\pi}{\lambda} \sum_{m,n} \frac{1}{n+1} C_{n,m} \left(k \lambda\right)^{n+1} \cos\left[m \left(\phi - \phi_{n,m}\right)\right],
+```
+
+where $k = \sqrt{k_x^2 + k_y^2}$ is the radial component and $\phi = \arctan\left[k_y/k_x\right]$ is the azimuthal component of the spatial frequency wavevector, and $n,m$ are the radial and azimuthal orders of the aberration coefficient $C_{n,m}$ with axis $\phi_{n,m}$, respectively.
+
+We can visualize the effect of each aberration coefficient independently using the Fourier-space probe, often called the contrast-transfer function (CTF), and its inverse Fourier-transform which illustrates the effect of the CTF on a point source:
+
+```{math}
+:label: psf_eq
+
+\begin{align}
+  \mathrm{CTF}(\bm{k}) &= \mathrm{e}^{-\mathrm{i}\chi(\bm{k})} \\
+  \mathrm{PSF}(\bm{r}) &= \mathcal{F}^{-1}_{\bm{k}\rightarrow \bm{r}}\left[\mathrm{CTF}(\bm{k}) \right].
+\end{align}
+
+```
+
+:::::{tab-set}
+::::{tab-item} CTF
+:::{figure} #app:ctfs_figure
+:::
+::::
+::::{tab-item} PSF
+:::{figure} #app:psfs_figure
+:::
+::::
+:::::
