@@ -32,7 +32,7 @@ Confusingly, this is used to refer to both the real-space and its dual Fourier-s
 
 :::
 
-### Probe-Forming Aperture
+## Probe-Forming Aperture
 
 The STEM probe-forming aperture, located in the condenser system, essentially limits the maximum wavevector (i.e. maximum transferred frequency) of the incident electron wavefunction.
 
@@ -41,10 +41,11 @@ Let's investigate how the radius of this soft aperture (specified by the converg
 
 ```{figure} #app:convergence_angle_widget
 :name: convergence_angle_widget
+:placeholder: ./figures/convergence_angle_placeholder.png
 Effect of the convergence semi-angle on the real-space size of a converged probe.
 ```
 
-### Aberrations Function
+## Aberrations Function
 
 It is evident from [](#convergence_angle_widget) that the larger the convergence angle, the smaller the real-space probe size.
 Why do we bother clipping the elecrons at higher scattering angles then, and don't always image with a large convergence angle?
@@ -52,6 +53,7 @@ The reason is that the residual aberrations we mentioned above are more pronounc
 
 ```{figure} #app:aberrations_widget
 :name: aberrations_widget
+:placeholder: ./figures/aberrations_placeholder.png
 Effect of common aberrations on the real-space size of a converged probe.
 ```
 
@@ -88,12 +90,35 @@ We can visualize the effect of each aberration coefficient independently using t
 ```
 
 :::::{tab-set}
-::::{tab-item} CTF
-:::{figure} #app:ctfs_figure
+::::{tab-item} Contrast transfer Functions
+:::{figure} ./figures/CTFs_table.png
 :::
 ::::
-::::{tab-item} PSF
-:::{figure} #app:psfs_figure
+::::{tab-item} Point spread functions
+:::{figure} ./figures/PSFs_table.png
 :::
 ::::
+Contrast transfer and point spread functions for independent aberration coefficients at 100kV.
+Note that all the azimuthal axes have been set to zero, $\phi_{n,m}=0$, and that the coefficient magnitudes have been scaled by their radial order, $C_{n,m}= 50^n$.
 :::::
+
+::::{admonition} Common aliases and conventions
+:class: information
+
+Low-order aberrations have common aliases, which both the simulation and analysis codes, `abTEM` and `py4DSTEM` respectively, we will use accept:
+
+:::{table}
+:label: aliases_center
+:align: center
+|         | $m = 0$        | $m = 1$        | $m = 2$        | $m = 3$        | $m = 4$        | $m = 5$        | $m = 6$        |
+| ------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| $n = 1$ | `defocus`      |                | `astigmatism`  |                |                |                |                |
+| $n = 2$ |                | `coma`         |                | `trefoil`      |                |                |                |
+| $n = 3$ | `Cs`           |                | `astigmatism2` |                | `quadrafoil`   |                |                |
+| $n = 4$ |                | `coma2`        |                | `trefoil2`     |                | `pentafoil`    |                |
+| $n = 5$ | `C5`           |                | `astigmatism3` |                | `quadrafoil2`  |                | `hexafoil`     |
+:::
+
+Note that, by convention, we define `defocus` as $\Delta f = - C_{1,0}$, with positive `defocus` corresponding to the focal point being inside (or even after!) the sample.
+
+::::
