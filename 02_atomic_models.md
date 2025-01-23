@@ -5,7 +5,7 @@ numbering:
   enumerator: 2.%s
 ---
 
-As we saw in [](#stem_measurements_page), the first step in simulating transmission electron microscopy measurements is to specify the electrostatic scattering potential of the sample.
+As we saw in [](#stem_measurements_page), the first step in simulating STEM measurements is to specify the electrostatic scattering potential of the sample.
 In the simplest case we will consider in [](#scattering_potentials_page), namely the independent atom model (IAM), this is fully specified by the coordinates and chemical symbols of the atoms in the sample.
 
 We will use the Atomic Simulation Environment (ASE) package to manipulate and visualize atomic models of the samples we will simulate.

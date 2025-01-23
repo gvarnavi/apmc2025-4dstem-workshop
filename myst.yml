@@ -18,18 +18,15 @@ project:
   #    binder:
   #      url: https://y2j74k9mn0bz.curvenote.dev/services/binder/
   #      repo: msa-em/em-quickstart-uv
-  # jupyter:
-  #   server:
-  #     url: 'http://localhost:8888'
-  #     token: '512ac78f14e1141db1fac17e8b4099c1e5bc7d589518b38c'
+  #  jupyter:
+  #    server:
+  #      url: 'http://localhost:8888'
+  #      token: '512ac78f14e1141db1fac17e8b4099c1e5bc7d589518b38c'
   open_access: true
   license: CC-BY-4.0
   banner: banner.png
   thumbnail: thumbnail.webm
-  date: 2024-12-27
-  history:
-    submitted: 2024-12-27
-    published: 2025-01-31
+  date: 2025-01-31
   requirements:
     - 'Dockerfile'
     - requirements.in
@@ -83,11 +80,16 @@ project:
     ASE: atomic simulation environment
   toc:
     - file: index.md
-    - title: STEM Principles
+    - title: EM Simulation Principles
       children:
         - file: 01_scanning_transmission_electron_microscopy.md
         - file: 02_atomic_models.md
         - file: 03_scattering_potentials.md
+        - file: 04_electron_wavefunctions.md
+    - title: EM Simulation Algorithms
+      children:
+        - file: 05_multislice_algorithm.md
+        - file: 06_bloch_wave_algorithm.md
     - title: Notebooks
       children:
         - pattern: notebooks/*.ipynb
