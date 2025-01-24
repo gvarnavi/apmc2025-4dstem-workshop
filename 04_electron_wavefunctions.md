@@ -90,7 +90,7 @@ We can visualize the effect of each aberration coefficient independently using t
 ```
 
 :::::{tab-set}
-::::{tab-item} Contrast transfer Functions
+::::{tab-item} Contrast transfer functions
 :::{figure} ./figures/CTFs_table.png
 :::
 ::::
