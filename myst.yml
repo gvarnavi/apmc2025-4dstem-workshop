@@ -24,7 +24,6 @@ project:
   #      token: '512ac78f14e1141db1fac17e8b4099c1e5bc7d589518b38c'
   open_access: true
   license: CC-BY-4.0
-  banner: banner.png
   thumbnail: thumbnail.webm
   date: 2025-01-31
   requirements:
