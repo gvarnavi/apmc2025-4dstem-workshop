@@ -2,14 +2,12 @@
 FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 
 # uv optimization env variables
-ENV UV_LINK_MODE=copy
 ENV UV_COMPILE_BYTECODE=1
 ENV UV_SYSTEM_PYTHON=1
 
 # install deps (system is safe, already isolated)
 COPY ./requirements.in .
-RUN --mount=type=cache,target=/root/.cache/uv \
-	uv pip install --no-editable -r requirements.in
+RUN uv pip install -r requirements.in
 
 # create user with a home directory for binder
 ARG NB_USER
