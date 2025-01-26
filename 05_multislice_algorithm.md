@@ -54,17 +54,17 @@ Using these assumptions [](#scaled_schrodinger_eq) can be simplified further to 
 \frac{\partial}{\partial z} \psi(\bm{r}) = \frac{i \lambda(U_0)}{4\pi} \nabla^2_{x,y} \psi(\bm{r}) + i \sigma V(\bm{r}) \psi(\bm{r}).
 ```
 
-[](#multislice_eq) outlines the numerical scheme we will use to solve it.
-Namely, for a wavefunction $\psi_0$ at a specific depth inside the sample, $z_0$, we can evaluate the operators on the right-hand side over a distance $\Delta z$ to calculate a new wavefunction $\psi(\bm{r})$ at position $z_0 + \Delta z$.
+Equation [](#multislice_eq) outlines the numerical scheme we will use to solve it.
+Namely, for a wavefunction $\psi_n$ at a specific depth inside the sample, $z_n$, we can evaluate the operators on the right-hand side over a distance $\Delta z$ to calculate a new wavefunction $\psi_n^{\prime}(\bm{r})$ at position $z_n + \Delta z$.
 
 For small $\Delta z$, the solution to [](#multislice_eq) is given by {cite:p}`10.1007/978-3-030-33260-0`:
 ```{math}
 :label: small_dz_sol_eq
-\psi(\bm{r}) = \mathrm{exp} \left[\frac{i \lambda(U_0)}{4 \pi}\Delta z \nabla^2_{x,y} + i \sigma V_{\Delta z}(\bm{r}) \right] \psi_0 (\bm{r}),
+\psi_n^{\prime}(\bm{r}) = \mathrm{exp} \left[\frac{i \lambda(U_0)}{4 \pi}\Delta z \nabla^2_{x,y} + i \sigma V_n^{\Delta z}(\bm{r}) \right] \psi_n (\bm{r}),
 ```
 where
 ```{math}
-V_{\Delta z}(\bm{r}) = \int_{z_0}^{z_0 + \Delta z} V(\bm{r}) dz,
+V_n^{\Delta z}(\bm{r}) = \int_{z_n}^{z_n + \Delta z} V(\bm{r}) dz,
 ```
 is one slice of the numerical-grid representation of our scattering potential we described in [](#scattering_potentials_page).
 
@@ -78,13 +78,85 @@ Instead, the multislice method solves [](#small_dz_sol_eq) numerically, by alter
 Assuming an infinitesimally thin potential slice, we can drop the $\nabla^2_{x,y}$ term in [](#small_dz_sol_eq) to obtain the solution {cite:p}`10.1007/978-3-030-33260-0`:
 ```{math}
 :label: transmission_eq
-\psi(\bm{r}) = \psi_0(\bm{r}) \mathrm{exp} \left[i\, \sigma(U_0)\, V_{\Delta z}(\bm{r}) \right].
+\begin{align}
+	\psi_n^{\prime}(\bm{r}) & = \mathrm{exp} \left[i\, \sigma(U_0)\, V_n^{\Delta z}(\bm{r}) \right] \psi_n(\bm{r}) \\
+	                        & \equiv t_n(\bm{r}) \psi_n(\bm{r}),                                                        
+\end{align}
 ```
-
+where we have defined the transmission operator, $t_n(\bm{r})$.
 Intuitively, this can be understood as the electron wavefunction acquiring a positive phase-shift proportional to the scattering potential in a particular slice.
 
 ### Propagation Operator
 
+In the next half-step, we need to propagate the electron wavefunction from one slice to the next using [](#small_dz_sol_eq).
+Setting the space between the slices empty, $V(\bm{r})=0$, and Taylor expanding, we obtain:
+
+```{math}
+:label: propagation_eq
+\begin{align}
+	\psi_{n+1}(\bm{r}) & = \mathrm{exp} \left[ \frac{\mathrm{i\, \lambda(U_0) \Delta z}}{4 \pi} \nabla^2_{x,y} \right] \psi_n^{\prime}(\bm{r}) \\
+	                   & = \left[                                                                                                              
+	\sum_{m=0}^{\infty}\left(\frac{\mathrm{i}\,\lambda(U_0) \Delta z}{4 \pi}\right)^m \frac{\partial^{2m} \psi_{n}^{\prime}(\bm{r})}{\partial x^{2m}}
+	\right]
+	\left[
+	\sum_{l=0}^{\infty}\left(\frac{\mathrm{i}\,\lambda(U_0) \Delta z}{4 \pi}\right)^l \frac{\partial^{2l} \psi_{n}^{\prime}(\bm{r})}{\partial y^{2l}}
+	\right].
+\end{align}
+```
+Equation [](#propagation_eq) simplifies further when expressed in Fourier space, $\Psi_{n+1}(\bm{k}) = \mathcal{F}_{\bm{r}\rightarrow \bm{k}} \left[ \psi_{n+1}(\bm{r}) \right]$:
+
+
+```{math}
+:label: propagation_fourier_eq
+\begin{align}
+	\Psi_{n+1}(\bm{k}) & = 
+	\left[
+	\sum_{m=0}^{\infty} \left(- \mathrm{i}\,\pi \lambda(U_0) \Delta z k^2_x  \right)^m
+	\right] 
+	\left[
+	\sum_{l=0}^{\infty} \left(- \mathrm{i}\,\pi \lambda(U_0) \Delta z k^2_y  \right)^l
+	\right] 
+	\\
+	                   & = 
+	\mathrm{exp}\left(-\mathrm{i}\,\pi \lambda(U_0) \Delta z k^2_x\right)
+	\mathrm{exp}\left(-\mathrm{i}\,\pi \lambda(U_0) \Delta z k^2_y\right)
+	\Psi_{n}^{\prime}(\bm{k}) \\ 
+	                   & = 
+	\mathrm{exp}\left(-\mathrm{i}\,\pi \lambda(U_0) \Delta z \left|k\right|^2\right) \Psi_{n}^{\prime}(\bm{k}) \\
+                       & \equiv
+    \mathcal{P}_{\Delta z}(\bm{k}) \Psi_{n}^{\prime}(\bm{k}),
+\end{align}
+```
+where we have defined the [Fresnel propagator](wiki:Fresnel_diffraction), $\mathcal{P}_{\Delta z}(\bm{k})$.
+
+### Iterative Fourier Implementation
+
+The two propagators can be combined efficiently using the convolution property of the Fourier transform to obtain:
+
+```{math}
+:label: multislice_eq_slice
+\begin{align}
+    \psi_{n+1}(\bm{r}) & = \mathcal{F}_{\bm{k}\rightarrow \bm{r}}^{-1} 
+        \left[
+            \mathcal{P}_{\Delta z}(\bm{k}) \mathcal{F}_{\bm{r} \rightarrow \bm{k}}
+                \left[
+                    t_n(\bm{r}) \psi_{n}(\bm{r})
+                \right]
+        \right] \\
+                       & \equiv \mathcal{M}_n \psi_n(\bm{r}),
+\end{align}
+```
+where we have defined the multislice operator, $\mathcal{M}_n$.
+Equation [](#multislice_eq_slice) can be applied iteratively until all the potential slices have been traversed:
+
+```{math}
+:label: multislice_eq
+\psi_{N}(\bm{r}) = \mathcal{M}_{N-1} \mathcal{M}_{N-2} \dots \mathcal{M}_0 \psi_0(\bm{r}).
+```
+[](#multislice_widget) illustrates the above equations interactively, illustrating the effect of each operator separately.
+Click somewhere on the potential to position the incoming electron wavefunction, and use the buttons to transmit/propagate the wavefunction through the potential.
+
 ```{figure} #app:multislice_widget
+:name: multislice_widget
 :placeholder: ./figures/multislice_placeholder.png
 ```
