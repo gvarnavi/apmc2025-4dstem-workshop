@@ -100,8 +100,9 @@ or projecting along the beam direction as in [](#projected_potential).
 Si$_3$N$_4$ super-cell potential projected along the beam-dimension.
 ```
 
-:::{admonition} Sampling considerations
+:::{admonition} Sampling Considerations
 :class: information
+:label: sampling_callout
 
 Given an orthorhombic cell with in-plane cell dimensions $L_x$ and $L_y$ and rectilinear grid points $N_x$ and $N_y$ respectively, the real-space sampling is given by 
 

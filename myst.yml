@@ -77,6 +77,7 @@ project:
     tcBF: tilt corrected bright field
     IAM: independent atom model
     ASE: atomic simulation environment
+    PRISM: planewave reciprocal-space interpolated scattering matrix
   toc:
     - file: index.md
     - title: EM Simulation Principles
@@ -88,7 +89,8 @@ project:
     - title: EM Simulation Algorithms
       children:
         - file: 05_multislice_algorithm.md
-        - file: 06_bloch_wave_algorithm.md
+        - file: 06_prism_algorithm.md
+        - file: 07_bloch_wave_algorithm.md
     - title: Notebooks
       children:
         - pattern: notebooks/*.ipynb

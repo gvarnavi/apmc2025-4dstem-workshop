@@ -134,7 +134,7 @@ where we have defined the [Fresnel propagator](wiki:Fresnel_diffraction), $\math
 The two propagators can be combined efficiently using the convolution property of the Fourier transform to obtain:
 
 ```{math}
-:label: multislice_eq_slice
+:label: multislice_operator_slice
 \begin{align}
     \psi_{n+1}(\bm{r}) & = \mathcal{F}_{\bm{k}\rightarrow \bm{r}}^{-1} 
         \left[
@@ -147,10 +147,10 @@ The two propagators can be combined efficiently using the convolution property o
 \end{align}
 ```
 where we have defined the multislice operator, $\mathcal{M}_n$.
-Equation [](#multislice_eq_slice) can be applied iteratively until all the potential slices have been traversed:
+Equation [](#multislice_operator_slice) can be applied iteratively until all the potential slices have been traversed, to return the exit wavefunction $\psi_N(\bm{r})$:
 
 ```{math}
-:label: multislice_eq
+:label: multislice_operator
 \psi_{N}(\bm{r}) = \mathcal{M}_{N-1} \mathcal{M}_{N-2} \dots \mathcal{M}_0 \psi_0(\bm{r}).
 ```
 [](#multislice_widget) illustrates the above equations interactively, illustrating the effect of each operator separately.
