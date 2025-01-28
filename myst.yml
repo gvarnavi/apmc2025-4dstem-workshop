@@ -80,13 +80,13 @@ project:
     PRISM: planewave reciprocal-space interpolated scattering matrix
   toc:
     - file: index.md
-    - title: EM Simulation Principles
+    - file: 01_scanning_transmission_electron_microscopy.md
+    - title: Electron Scattering Principles & Inputs
       children:
-        - file: 01_scanning_transmission_electron_microscopy.md
         - file: 02_atomic_models.md
         - file: 03_scattering_potentials.md
         - file: 04_electron_wavefunctions.md
-    - title: EM Simulation Algorithms
+    - title: Electron Scattering Algorithms
       children:
         - file: 05_multislice_algorithm.md
         - file: 06_prism_algorithm.md
