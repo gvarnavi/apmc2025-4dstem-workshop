@@ -78,6 +78,9 @@ project:
     IAM: independent atom model
     ASE: atomic simulation environment
     PRISM: planewave reciprocal-space interpolated scattering matrix
+    CBED: converged beam electron diffraction
+    PACBED: position averaged converged beam electron diffraction
+    PED: precession electron diffraction
   toc:
     - file: index.md
     - file: 01_scanning_transmission_electron_microscopy.md

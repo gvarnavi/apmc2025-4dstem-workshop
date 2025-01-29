@@ -38,15 +38,16 @@ This allows us to define the electron-potential interaction parameter:
 and express [](#schrodinger_eq) as:
 ```{math}
 :label: scaled_schrodinger_eq
-\left[\nabla^2 + 4 \pi^2 k_0^2(U_0) \right]\psi(\bm{r}) = -4\pi^2 \sigma V(\bm{r})\psi(\bm{r}),
+\left[\nabla^2 + 4 \pi^2 k_0^2 \right]\psi(\bm{r}) = -4\pi^2 \sigma V(\bm{r})\psi(\bm{r}),
 ```
-where we have introduced the in-plane electron wavevector, $k_0(U_0) = 1/ \lambda(U_0)$.
+where we have introduced the in-plane electron wavevector, $k_0 = 1/ \lambda(U_0)$.
+Note this has an implicit dependence on the accelerating voltage, which we omit for notational convenience.
 
 ## Multislice assumptions
 
 To proceed, the multislice method makes two assumptions:
 - The $\partial^2 / \partial z^2$ term in the Laplacian can be neglected, since the wavefunction variation along the beam direction (z-axis) is much lower than the in-plane variation  
-- The in-plane wavevector $k_0$ is much larger than the in-plane variations of the wavefunction, i.e. $k_0(U_0) \gg \left| \nabla^2_{x,y}\right|$
+- The in-plane wavevector $k_0$ is much larger than the in-plane variations of the wavefunction, i.e. $k_0 \gg \left| \nabla^2_{x,y}\right|$
 
 Using these assumptions [](#scaled_schrodinger_eq) can be simplified further to highlight the separation in timescales between the axial and in-plane components {cite:p}`10.1007/978-3-030-33260-0`:
 ```{math}
