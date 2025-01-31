@@ -94,6 +94,10 @@ project:
         - file: 05_multislice_algorithm.md
         - file: 06_prism_algorithm.md
         - file: 07_bloch_wave_algorithm.md
+        - file: 08_detectors_phonons.md
+    - title: Phase Retrieval Reconstructions
+      children:
+        - file: 09_phase_problem.md
     - title: Notebooks
       children:
         - pattern: notebooks/*.ipynb
