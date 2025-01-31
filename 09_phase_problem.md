@@ -28,7 +28,7 @@ To produce usable contrast from defocus, we must either apply a large defocus or
 
 Defocusing an electron wavefunction $\psi_0(\bm{r})$ by a distance $\Delta f$ to produce the output wave $\psi(\bm{r})$ can be modeled mathematically using the expression
 ```{math}
-:label: eq:defocus_real
+:label: eq:defocus
 
 \begin{align}
 \psi(\bm{r}) &= \psi_0(\bm{r})

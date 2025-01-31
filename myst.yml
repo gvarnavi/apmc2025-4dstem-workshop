@@ -98,6 +98,7 @@ project:
     - title: Phase Retrieval Reconstructions
       children:
         - file: 09_phase_problem.md
+        - file: 10_differential_phase_contrast.md
     - title: Notebooks
       children:
         - pattern: notebooks/*.ipynb
