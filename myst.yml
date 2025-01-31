@@ -99,6 +99,9 @@ project:
       children:
         - file: 09_phase_problem.md
         - file: 10_differential_phase_contrast.md
+        - file: 11_parallax.md
+        - file: 12_direct_ptychography.md
+        - file: 13_iterative_ptychography.md
     - title: Notebooks
       children:
         - pattern: notebooks/*.ipynb
