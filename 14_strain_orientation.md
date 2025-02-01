@@ -42,3 +42,8 @@ Try positioning the probe in the different grains, as well as the grain boundari
 This is further complicated by the fact that the grain boundaries need not be aligned with the beam direction and thus, as the probe traverses the sample, we are observing a diffuse boundary in projection.
 
 In order to match crystalline orientations then, we need to perform multiple dynamical scattering simulations along various zone-axes orientations and "match" the experimental observations with the generated database.
+
+```{attention} Try it yourself!
+Click the following badges to try two complete notebooks on Colab:  
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/ophusgroup/apmc2025-4dstem-workshop/blob/main/notebooks/try-it-yourself/09.strain_orientation_mapping_01.ipynb) and [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/ophusgroup/apmc2025-4dstem-workshop/blob/main/notebooks/try-it-yourself/10.strain_orientation_mapping_02.ipynb) and 
+```
