@@ -102,6 +102,9 @@ project:
         - file: 11_parallax.md
         - file: 12_direct_ptychography.md
         - file: 13_iterative_ptychography.md
+    - title: Nanobeam Analysis
+      children:
+        - file: 14_strain_orientation.md
     - title: Notebooks
       children:
         - pattern: notebooks/*.ipynb
