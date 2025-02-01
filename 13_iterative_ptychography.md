@@ -50,5 +50,5 @@ Depending on the type of assumptions we make for the scattering physics, we are 
 
 ```{attention} Try it yourself!
 Click the following badges to try a complete notebook on Colab:
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/ophusgroup/apmc2025-4dstem-workshop/blob/main/notebooks/try-it-yourself/07.iterative_ptychography_01.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/ophusgroup/apmc2025-4dstem-workshop/blob/main/notebooks/try-it-yourself/07.iterative_ptychography_01.ipynb) and [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/ophusgroup/apmc2025-4dstem-workshop/blob/main/notebooks/try-it-yourself/11.phase_retrieval_01.ipynb)
 ```
