@@ -150,6 +150,7 @@ Understanding how the Laue circle corresponds to crystal tilting is essential fo
 :label: blochwave_dynamical_tilted_fig
 ```
 
+(cbed_section)=
 ## Converged Beam Electron Diffraction
 
 As we illustrated above, dynamical diffraction causes strong intensity oscillations between diffracted beams, which can be observed by tilting the crystal.
