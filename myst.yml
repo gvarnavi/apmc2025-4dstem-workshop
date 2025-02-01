@@ -105,6 +105,9 @@ project:
     - title: Nanobeam Analysis
       children:
         - file: 14_strain_orientation.md
+    - title: Try it Yourself!
+      children:
+        - pattern: notebooks/try-it-yourself/*.ipynb
     - title: Notebooks
       children:
         - pattern: notebooks/*.ipynb
