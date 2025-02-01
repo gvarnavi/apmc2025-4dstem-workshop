@@ -46,3 +46,8 @@ where $\mathbb{R}\left\{\cdot \right\}$ denotes taking the real-part of the comp
 :name: fig_dpc
 :placeholder: ./figures/dpc_sto_placeholder.png
 ```
+
+```{attention} Try it yourself!
+Click the following badge to try a complete notebook on Colab:  
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/ophusgroup/apmc2025-4dstem-workshop/blob/main/notebooks/try-it-yourself/01.dpc_01.ipynb)
+```
