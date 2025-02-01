@@ -49,3 +49,8 @@ Try playing around with the sliders to see if you can recover the residual aberr
 :name: direct-ptychography-aberrations-fig
 :placeholder: ./figures/direct-ptychography-aberrations-placeholder.png
 :::
+
+```{attention} Try it yourself!
+Click the following badges to try three complete notebooks on Colab:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/ophusgroup/apmc2025-4dstem-workshop/blob/main/notebooks/try-it-yourself/04.direct_ptychography_01.ipynb), [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/ophusgroup/apmc2025-4dstem-workshop/blob/main/notebooks/try-it-yourself/05.direct_ptychography_02.ipynb), and [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/ophusgroup/apmc2025-4dstem-workshop/blob/main/notebooks/try-it-yourself/06.direct_ptychography_03.ipynb)
+```
